@@ -13,3 +13,5 @@ A 1,200 × 1,500 crop needs twice as many pixels along each edge to reach the sa
 Use the [print sizing table](https://docs.google.com/spreadsheets/d/e/2PACX-1vR5dST6LnJeSgOptk6UMd11TqdIV80wpd_rbINEIU2ajm21KD7dJwVEGcmsyz3kMrXEIYsXrlvrrnfx/pubhtml) for 4 × 6, 5 × 7, square and larger prints. If your print shop specifies a different PPI, multiply each print edge in inches by that number instead.
 
 [Open the print size calculator](https://ri-vai.github.io/print-size-calculator/) · [Copy the JavaScript conversion function](https://gist.github.com/Ri-vai/d70aef5eaa63b3540004b7ee7d4a83b4)
+
+For a printable walkthrough, see the [8 × 10 photo preparation guide](https://docs.google.com/document/d/1qxnHnrXCM3h0laoNBzMKFsh_qhBho0e8AljSCXDUHYw/mobilebasic). The [print preparation checklist](https://sites.google.com/view/photo-print-sizing-guide) covers cropping, resolution and proofing.
