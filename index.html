@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Photo print size calculator</title>
+<style>*{box-sizing:border-box}body{background:#f6f4ed;color:#193a34;font:18px/1.5 system-ui;margin:8vh auto;padding:0 24px;max-width:780px}h1{font:normal clamp(38px,6vw,64px)/1.05 Georgia}section{background:white;border:1px solid #caccc0;padding:24px}form{display:flex;gap:16px;flex-wrap:wrap}label{flex:1;min-width:120px}input{display:block;width:100%;padding:9px;font:inherit}output{display:block;font:bold 30px Georgia;margin-top:20px}a{color:#086452}</style>
+<main><h1>Photo print size calculator</h1><p>Enter the finished print dimensions and your print shop’s target resolution. Compare the result with your image dimensions after cropping.</p><section><form id="size"><label>Width (in)<input type="number" min="0.01" step="any" value="8" required></label><label>Height (in)<input type="number" min="0.01" step="any" value="10" required></label><label>Pixels per inch<input type="number" min="1" step="any" value="300" required></label></form><output id="result" aria-live="polite"></output></section>
+<h2>Check the crop first</h2><p>An 8 × 10 print has a 4:5 aspect ratio. At 300 PPI, a 1,200 × 1,500 crop needs a 2× enlargement on each edge. After enlarging, inspect faces, lettering and fine texture at full size.</p>
+<p><a href="https://whisk-ai.io/image-upscaler">Enlarge a cropped image with Whisk AI</a> · <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR5dST6LnJeSgOptk6UMd11TqdIV80wpd_rbINEIU2ajm21KD7dJwVEGcmsyz3kMrXEIYsXrlvrrnfx/pubhtml">Common print sizes</a></p></main>
+<script type="module">
+import {printPixels} from './print-size.mjs';
+const form=document.querySelector('form'), output=document.querySelector('output');
+function update(){
+  output.textContent=form.checkValidity() ? printPixels(...Array.from(form.elements, e=>e.valueAsNumber)).map(n=>n.toLocaleString('en-US')).join(' × ')+' pixels' : 'Enter a positive value in every field.';
+}
+form.addEventListener('input',update);form.addEventListener('submit',e=>e.preventDefault());update();
+</script></html>
